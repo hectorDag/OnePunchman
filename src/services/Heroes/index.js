@@ -27,6 +27,10 @@ class HeroesServices {
         }) 
     }
 
+    idHeroe(id){
+        return this.Heroes.find(c => c.id === parseInt(id));;
+    }
+
     createHeroe(newHeroe){
         this.Heroes.push(newHeroe);
     }

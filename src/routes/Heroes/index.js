@@ -1,8 +1,10 @@
 const express = require('express');
-const {getHeroes, newHeroe, editComplete, editPartial, deleteHeroe} = require("../../controllers/Heroes/index");
+const {getHeroes, getById, newHeroe, editComplete, editPartial, deleteHeroe} = require("../../controllers/Heroes/index");
 const heroesRouter = express.Router();
 
 heroesRouter.get('/', getHeroes);
+
+heroesRouter.get('/:id', getById);
 
 heroesRouter.post('/new', newHeroe);
 
