@@ -1,7 +1,7 @@
-const routerPokemon = require('./Heroes/index');
+const routerHeroes = require('./Heroes/index');
 
 const routerApi = (app) => {
-    app.use('/', routerPokemon);
+    app.use('/', routerHeroes);
 }
 
 module.exports = routerApi;

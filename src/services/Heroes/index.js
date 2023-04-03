@@ -21,17 +21,16 @@ class HeroesServices {
 
     }
 
+    allHeroes(){
+        return new Promise((resolve, reject) => {
+            resolve(this.Heroes);
+        }) 
+    }
+/*
     newHeroe(newHeroe){
         this.Heroes.push(newHeroe);
     }
-
-    allHeroes(){
-
-        return new Promise((resolve, reject) => {
-            resolve(this.Heroes);
-        })
-        
-    }
+*/
 
 }
 
