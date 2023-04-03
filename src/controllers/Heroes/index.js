@@ -10,27 +10,19 @@ const getHeroes = async (req, res) => {
     }
 }
 
+const newHeroe = (req, res) => {
+  try {
+    const newHeroe = req.body;
+    heroesService.createHeroe(newHeroe);
+    res.status(201).send();
+  } catch(error) {
+    res.status(500).json( { message: 'error fatal' } )
+  }
+  
+}
+
 module.exports = {
-  getHeroes
+  getHeroes,
+  newHeroe,
 }  
 
-/*
-const create = (req, res) => {
-    try {
-      const newPokemon = req.body;
-      pokemonService.createPokemon(newPokemon);
-      res.status(201).send();
-    } catch(error) {
-      res.status(500).json( { message: 'error fatal' } )
-    }
-    
-  }
-
-const getHeroes = async (req, res) => {
-  try {
-    const Heroes = await heroesService.allHeroes();
-    res.status(200).json(Heroes);
-  } catch(error) {
-    res.status(404).json( { message: 'No hay heroes.' } );
-  }
-*/

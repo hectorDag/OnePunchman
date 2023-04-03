@@ -26,11 +26,10 @@ class HeroesServices {
             resolve(this.Heroes);
         }) 
     }
-/*
-    newHeroe(newHeroe){
+
+    createHeroe(newHeroe){
         this.Heroes.push(newHeroe);
     }
-*/
 
 }
 

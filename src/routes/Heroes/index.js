@@ -4,9 +4,9 @@ const heroesRouter = express.Router();
 
 heroesRouter.get('/', getHeroes);
 
-/*
 heroesRouter.post('/new', newHeroe);
 
+/*
 heroesRouter.put('/editC:id', editComplete);
 
 heroesRouter.patch('/editP:id', editPartial);
