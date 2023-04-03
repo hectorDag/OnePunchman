@@ -27,12 +27,23 @@ const newHeroe = (req, res) => {
     res.status(200).send();
   } catch(error) {
     res.status(500).json( { message: 'Error fatal.' } )
+  } 
+}
+
+const deleteHeroe = (req, res) => {
+  try{
+    const id = req.params.id;
+    const Heroe = heroesService.idHeroe(id);
+    heroesService.eliminate(id);
+    res.status(200).send(Heroe)
+  } catch (error) {
+    res.status(500).json( { message: 'Error fatal.' } )
   }
-  
 }
 
 module.exports = {
   getHeroes,
   getById,
-  newHeroe
+  newHeroe,
+  deleteHeroe
 }  

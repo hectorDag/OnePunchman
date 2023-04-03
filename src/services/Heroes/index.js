@@ -28,11 +28,16 @@ class HeroesServices {
     }
 
     idHeroe(id){
-        return this.Heroes.find(c => c.id === parseInt(id));;
+        return this.Heroes.find(c => c.id === parseInt(id));
     }
 
     createHeroe(newHeroe){
         this.Heroes.push(newHeroe);
+    }
+
+    eliminate(id){
+        const index = this.Heroes.findIndex(Heroe => Heroe.id === parseInt(id));
+        this.Heroes.splice(index, 1);
     }
 
 }

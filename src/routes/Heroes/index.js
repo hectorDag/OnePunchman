@@ -9,11 +9,12 @@ heroesRouter.get('/:id', getById);
 heroesRouter.post('/new', newHeroe);
 
 /*
-heroesRouter.put('/editC:id', editComplete);
+heroesRouter.put('/editC/:id', editComplete);
 
 heroesRouter.patch('/editP:id', editPartial);
-
-heroesRouter.delete('/delete:id', deleteHeroe);
 */
+
+heroesRouter.delete('/delete/:id', deleteHeroe);
+
 
 module.exports = heroesRouter;
