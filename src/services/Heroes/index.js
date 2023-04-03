@@ -35,11 +35,14 @@ class HeroesServices {
         this.Heroes.push(newHeroe);
     }
 
-    eliminate(id){
-        const index = this.Heroes.findIndex(Heroe => Heroe.id === parseInt(id));
-        this.Heroes.splice(index, 1);
+    completeEdit(Heroe,id){
     }
 
+    eliminate(id){
+        const index = this.Heroes.findIndex(Heroe => Heroe.id === parseInt(id));
+        this.Heroes.splice(index);
+    }
+ 
 }
 
 module.exports = HeroesServices;

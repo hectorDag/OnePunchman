@@ -30,6 +30,9 @@ const newHeroe = (req, res) => {
   } 
 }
 
+const editComplete = (req, res) => {
+}
+
 const deleteHeroe = (req, res) => {
   try{
     const id = req.params.id;
@@ -45,5 +48,6 @@ module.exports = {
   getHeroes,
   getById,
   newHeroe,
+  editComplete,
   deleteHeroe
 }  
