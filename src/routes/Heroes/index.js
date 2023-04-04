@@ -8,11 +8,9 @@ heroesRouter.get('/:id', getById);
 
 heroesRouter.post('/new', newHeroe);
 
-heroesRouter.put('/editC/:id', editComplete);
+heroesRouter.put('/editc/:id', editComplete);
 
-/*
-heroesRouter.patch('/editP/:id', editPartial);
-*/
+heroesRouter.patch('/editp/:id', editPartial);
 
 heroesRouter.delete('/delete/:id', deleteHeroe);
 

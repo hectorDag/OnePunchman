@@ -12,19 +12,17 @@ const getHeroes = async (req, res) => {
 
 const getById = (req, res) => {
   try{
-    const id = req.params.id;
-    const Heroe = heroesService.idHeroe(id);
+    const Heroe = heroesService.idHeroe(req.params.id);
     res.status(201).send(Heroe);
   } catch(error){
-    res.status(404).send('Heroe no encontrado.')
-  }
+    res.status(404).json( { message: 'Heroe no encontrado.' } )
+}
 }
 
 const newHeroe = (req, res) => {
   try {
-    const newHeroe = req.body;
-    heroesService.createHeroe(newHeroe);
-    res.status(200).send();
+    heroesService.createHeroe(req.body);
+    res.status(200).json( { message: 'Heroe creado.' } )
   } catch(error) {
     res.status(500).json( { message: 'Error fatal.' } )
   } 
@@ -33,12 +31,14 @@ const newHeroe = (req, res) => {
 const editComplete = (req, res) => {
 }
 
+const editPartial = (req, res) => {
+
+}
+
 const deleteHeroe = (req, res) => {
   try{
-    const id = req.params.id;
-    const Heroe = heroesService.idHeroe(id);
-    heroesService.eliminate(id);
-    res.status(200).send(Heroe)
+    const Heroe = heroesService.idHeroe(req.params.id);
+    res.status(200).json( { message: 'Heroe eliminado.' } )
   } catch (error) {
     res.status(500).json( { message: 'Error fatal.' } )
   }
@@ -49,5 +49,6 @@ module.exports = {
   getById,
   newHeroe,
   editComplete,
+  editPartial,
   deleteHeroe
 }  
