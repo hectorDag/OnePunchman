@@ -29,15 +29,26 @@ const newHeroe = (req, res) => {
 }
 
 const editComplete = (req, res) => {
+  try{
+    heroesService.completeEdit(req.body, req.params.id);
+    res.status(200).json( { message: 'Heroe editado.'} )
+  } catch (error) {
+    res.status(500).json( { message: 'Error fatal'} )
+  }
 }
 
 const editPartial = (req, res) => {
-
+  try{
+    heroesService.partialEdit(req.body, req.params.id);
+    res.status(200).json( { message: 'Heroe editado.' } );
+  } catch (error) {
+    res.status(500).json( { message: 'Error fatal.' } )
+  }
 }
 
 const deleteHeroe = (req, res) => {
   try{
-    const Heroe = heroesService.idHeroe(req.params.id);
+    heroesService.eliminate(req.params.id);
     res.status(200).json( { message: 'Heroe eliminado.' } )
   } catch (error) {
     res.status(500).json( { message: 'Error fatal.' } )

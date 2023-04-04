@@ -36,10 +36,13 @@ class HeroesServices {
     }
 
     completeEdit(Heroe,id){
+        let index = this.Heroes.findIndex(c => c.id === parseInt(id));
+        this.Heroes[index] = Heroe;
     }
 
     partialEdit(Heroe,id){
-
+        let index = this.Heroes.findIndex(c => c.id === parseInt(id));
+        this.Heroes[index] = {...this.Heroes[index], ...Heroe};
     }
 
     eliminate(id){
